@@ -123,7 +123,7 @@ for(k = 0; k<n; k++)
 }
 //on affiche le résultat avec une condition si la matrice est inversible
     cout << "Matrice inversee : "<< endl;
-    if (Booleen==1){
+    if (continuer == false){
         for (i = 0; i < n; i++){
             for (j = n ; j < n * 2; j++){
                 cout << " " <<M[i][j] << "    ";

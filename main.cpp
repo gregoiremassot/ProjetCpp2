@@ -8,26 +8,26 @@ int main()
     bool Booleen; //va servir pour l'affichage
     cout << "Dimensions de la matrice : ";
     cin >> n;
-    float M[n][n] = { 0 }, d;
+    float M[n][2*n] = { 0 }, d;
     cout << "Coefficients de la matrice : " << endl;
-    for (int i=1;i<=n;i++){
-        for (int j=1;j<=n;j++){
-            cout<<"M["<<i<<"]"<<"["<<j<<"] : ";//préciser quel coefficient on entre
+    for (int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            cout<<"M["<<i+1<<"]"<<"["<<j+1<<"] : ";//préciser quel coefficient on entre
             cin>>M[i][j];
         }
     }
     cout<< "Matrice a inverser : " << endl;
-    for (int i=1;i<=n;i++)//on affiche la matrice que l'on veut inverser sur la console
+    for (int i=0;i<n;i++)//on affiche la matrice que l'on veut inverser sur la console
     {
-        for (int j=1;j<=n;j++){
+        for (int j=0;j<n;j++){
             cout<<" "<<M[i][j]<<" ";
         }
         cout<< endl ;
     }
 
 //on crée la matrice identité
-    for (i = 1; i <= n; i++){
-        for (j = 1; j <= 2 * n; j++){
+    for (i = 0; i < n; i++){
+        for (j = 0; j < 2 * n; j++){
             if (j == (i + n)){ //qui sera à côté de la matrice à inverser (concaténation)
                 M[i][j] = 1;
             }

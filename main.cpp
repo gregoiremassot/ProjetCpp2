@@ -8,7 +8,7 @@ int main()
     bool Booleen; //va servir pour l'affichage
     cout << "Dimensions de la matrice : ";
     cin >> n;
-    float M[10][10] = { 0 }, d;
+    float M[n][n] = { 0 }, d;
     cout << "Coefficients de la matrice : " << endl;
     for (int i=1;i<=n;i++){
         for (int j=1;j<=n;j++){

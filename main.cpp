@@ -5,12 +5,11 @@ using namespace std;
 int main()
 {
     int i, j, k, n;
-    bool Booleen; //va servir pour l'affichage
     bool continuer;
     cout << "Dimensions de la matrice : ";
     cin >> n;
     float M[n][2*n] = { 0 }, d;
-    float lk[2*n], li[2*n];
+
     float Mp[n][2*n];
 
     cout << "Coefficients de la matrice : " << endl;
@@ -37,45 +36,7 @@ int main()
             }
         }
     }
-/*
-//on fait un pivot de gauss
-    for (i = n; i > 1; i--)
-    {
-        if (M[i - 1][1] < M[i][1]){
-            for (j = 1; j <= n * 2; j++)
-            {
-                d = M[i][j];
-                M[i][j] = M[i - 1][j];
-                M[i - 1][j] = d;
-            }
-        }
-    }
 
-//on diagonalise
-    for (i = 1; i <= n; i++)
-    {
-        for (j = 1; j <= n * 2; j++){
-            if (j != i)
-            {
-                d = M[j][i] / M[i][i];
-                for (k = 1; k <= n * 2; k++)
-                    M[j][k] -= M[i][k] * d;
-            }
-        }
-    }
-
-// vérifie si les valeurs propres ne sont pas nulles, si oui on divise pour avoir l'identité
-    for (i = 1; i <= n; i++){
-        d = M[i][i];
-        if (isnan(M[i][i]) || d==0) {
-            Booleen = 0;
-            break;
-        }
-        for (j = 1; j <= n * 2; j++){
-            M[i][j] = M[i][j] / d;
-        }
-    }
-*/
 
 for(k = 0; k<n; k++)
 {
@@ -123,7 +84,8 @@ for(k = 0; k<n; k++)
 }
 //on affiche le résultat avec une condition si la matrice est inversible
     cout << "Matrice inversee : "<< endl;
-    if (continuer == false){
+    if (continuer == false)
+    {
         for (i = 0; i < n; i++){
             for (j = n ; j < n * 2; j++){
                 cout << " " <<M[i][j] << "    ";
@@ -131,8 +93,9 @@ for(k = 0; k<n; k++)
             cout << endl;
         }
     }
-    else{
-        cout << "le systeme n'a pas de solution avec cette methode !" << endl ;
+    else
+    {
+        cout << "La matrice n'est pas inversible ou bien la méthode ne marche pas." << endl ;
     }
     return 0;
 }

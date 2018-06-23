@@ -9,8 +9,7 @@ int main()
     cout << "Dimensions de la matrice : ";
     cin >> n;
     float M[n][2*n] = { 0 }, d;
-
-    float Mp[n][2*n];
+    float Mp[n][2*n]; // copie de la matrice M pour la boucle sur k
 
     cout << "Coefficients de la matrice : " << endl;
     for (int i=0;i<n;i++){
@@ -37,12 +36,12 @@ int main()
         }
     }
 
-
+// Pour ka llant de 1 à n
 for(k = 0; k<n; k++)
 {
     i = k;
     continuer = true;
-
+    // On recopie la matrice pour construire son itération k+1
     for(int i1=0; i1<n;i1++)
     {
         for(j=0;j<2*n;j++)
@@ -50,23 +49,26 @@ for(k = 0; k<n; k++)
             Mp[i1][j] = M[i1][j];
         }
     }
-
+    // Tant que A[i][k] est nul, on boucle
     while(i < n)
     {
-        if(M[i][k] != 0)
+
+        if(M[i][k] != 0) // Si on a A[i][k] non nul
         {
             continuer = false;
 
+            // On échange Li et Lk
             for(j = 0; j<2*n; j++)
             {
                 M[k][j] =  Mp[i][j];
                 M[i][j] =  Mp[k][j];
             }
+            // On remplace lk par lk/A[k][k] de la matrice de la précédente itération
             for(j=0; j<2*n;j++)
             {
                 M[k][j] = Mp[k][j]/Mp[k][k];
             }
-
+            // Pour i allant de 1 à n on modifie li
             for(int i1=0; i1 < n; i1++)
             {
                 if(i1 != k)
@@ -79,6 +81,7 @@ for(k = 0; k<n; k++)
         }
         i++;
     }
+    // Si on a pas trouvé de ligne A[i][k] nulle, on stoppe la boucle principale car cela signidfie que la matrice n'est pas inversible
     if(continuer == true)
         break;
 }

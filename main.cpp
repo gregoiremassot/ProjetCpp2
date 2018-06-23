@@ -74,9 +74,10 @@ for(k = 0; k<n; k++)
             {
                 if(i1 != k)
                 {
+                    int a = M[i1][k];
                     for(j=0;j<2*n;j++)
                     {
-                        M[i1][j] = M[i1][j] - M[i1][k]*M[k][j];
+                        M[i1][j] = M[i1][j] - a*M[k][j];
                     }
                 }
             }

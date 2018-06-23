@@ -49,14 +49,7 @@ for(k = 0; k<n; k++)
             Mp[i1][j] = M[i1][j];
         }
     }
-    cout << "Matrice début boucle" << endl;
-    for (int i1=0;i1<n;i1++)//on affiche la matrice que l'on veut inverser sur la console
-    {
-        for (int j=0;j<2*n;j++){
-            cout<<" "<<M[i1][j]<<" ";
-        }
-        cout<< endl ;
-    }
+
     // Tant que A[i][k] est nul, on boucle
     while(i < n && continuer)
     {
@@ -91,14 +84,7 @@ for(k = 0; k<n; k++)
         }
         i++;
     }
-    cout << "Matrice fin boucle" << endl;
-    for (int i1=0;i1<n;i1++)//on affiche la matrice que l'on veut inverser sur la console
-    {
-        for (int j=0;j<2*n;j++){
-            cout<<" "<<M[i1][j]<<" ";
-        }
-        cout<< endl ;
-    }
+
     // Si on a pas trouvé de ligne A[i][k] nulle, on stoppe la boucle principale car cela signidfie que la matrice n'est pas inversible
     if(continuer == true)
         break;

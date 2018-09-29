@@ -1,3 +1,4 @@
+// Projet de rattrapage de C++
 #include <iostream>
 #include <math.h> // pour utiliser la fonction isnan
 using namespace std;

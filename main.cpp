@@ -1,4 +1,5 @@
 // Projet de rattrapage de C++
+// Pour valider sa L3 actuariat
 #include <iostream>
 #include <math.h> // pour utiliser la fonction isnan
 using namespace std;
